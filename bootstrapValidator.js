@@ -27,6 +27,10 @@ function validate(mainString, N) {
     }
 }
 
+// exports below for testing purposes.
+const __validate = validate;
+
 module.exports = {
     validate,
+    __validate,
 };

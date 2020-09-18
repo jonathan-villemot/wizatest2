@@ -1,6 +1,10 @@
 {
   "dependencies": {
+    "jest": "^26.4.2",
     "lodash": "^4.17.20",
     "yargs": "^16.0.3"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }
