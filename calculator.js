@@ -18,8 +18,9 @@ class Calculator {
         this.displayHighestResults();
         console.log('process ended calculation done');
     }
+
     /**
-     * Parse the Main string into substrings of N size and stores them into this.substrings
+     * Parses the Main string into substrings of N size and stores them into this.substrings
      * for the current class instance.
      */
     parseSubstrings() {
@@ -48,6 +49,9 @@ class Calculator {
         }
     }
 
+    /**
+     * Explodes all the substrings found in the main string and transforms them into array of characters.
+     */
     explodeSubstrings() {
         let indexInSubstringArray = 0;
         this.subStrings.forEach(substring => {
@@ -56,6 +60,9 @@ class Calculator {
         });
     }
 
+    /**
+     * Calculate the multiplcation result for each substrings.
+     */
     calculateResults() {
         this.arrayWithParseAndSplitData.forEach(index => {
             let subResult = 1;
@@ -67,6 +74,9 @@ class Calculator {
         });
     }
 
+    /**
+     * Sorts and set the final array of results with the highest values.
+     */
     fetchHighestResults() {
         const sortedResults = _.sortBy(this.arrayWithParseAndSplitData, 'result');
 
@@ -83,6 +93,9 @@ class Calculator {
         this.highestResults = highestResults;
     }
 
+    /**
+     * Display the content of the result array.
+     */
     displayHighestResults() {
         console.log(' -------------------------');
         this.highestResults.forEach(result => {
