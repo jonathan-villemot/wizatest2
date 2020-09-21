@@ -1,4 +1,4 @@
-const bsv = require('./bootstrapValidator');
+let bsv = require('./bootstrapValidator');
 
 describe('boostrapValidator', () => {
 

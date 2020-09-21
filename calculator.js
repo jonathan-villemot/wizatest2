@@ -1,4 +1,4 @@
-const _ = require('lodash');
+let _ = require('lodash');
 
 class Calculator {
     constructor(mainString, N) {
@@ -77,7 +77,7 @@ class Calculator {
      * Sorts and set the final array of results with the highest values.
      */
     fetchHighestResults() {
-        const sortedResults = _.sortBy(this.arrayWithParseAndSplitData, 'result');
+        let sortedResults = _.sortBy(this.arrayWithParseAndSplitData, 'result');
 
         this.highestResults = [sortedResults[sortedResults.length - 1]];
     }
