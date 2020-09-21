@@ -1,13 +1,13 @@
-const _ = require('lodash');
-const bootstrapValidator = require('./bootstrapValidator');
-const { Calculator } = require('./calculator');
+let _ = require('lodash');
+let bootstrapValidator = require('./bootstrapValidator');
+let { Calculator } = require('./calculator');
 
-const mainString = process.argv[2];
-const N = process.argv[3];
+let mainString = process.argv[2];
+let N = process.argv[3];
 
 bootstrapValidator.validate(mainString, N);
 
-const calculator = new Calculator(mainString, N);
+let calculator = new Calculator(mainString, N);
 let highestResults = calculator.process();
 
 console.log('starting process');
