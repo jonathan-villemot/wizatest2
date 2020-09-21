@@ -10,13 +10,12 @@ class Calculator {
     }
 
     process() {
-        console.log('starting process');
         this.parseSubstrings();
         this.explodeSubstrings();
         this.calculateResults();
         this.fetchHighestResults();
-        this.displayHighestResults();
-        console.log('process ended calculation done');
+
+        return this.highestResults;
     }
 
     /**
@@ -80,29 +79,7 @@ class Calculator {
     fetchHighestResults() {
         const sortedResults = _.sortBy(this.arrayWithParseAndSplitData, 'result');
 
-        const highestResult = sortedResults[sortedResults.length - 1].result;
-
-        let highestResults = [];
-
-        sortedResults.forEach(result => {
-            if (result.result === highestResult) {
-                highestResults.push(result);
-            }
-        });
-
-        this.highestResults = highestResults;
-    }
-
-    /**
-     * Display the content of the result array.
-     */
-    displayHighestResults() {
-        console.log(' -------------------------');
-        this.highestResults.forEach(result => {
-           console.log(`Result: ${result.result}: Substring: ${result.parsedNumbers.join('')}`)
-        });
-
-        console.log(' -------------------------');
+        this.highestResults = [sortedResults[sortedResults.length - 1]];
     }
 }
 
